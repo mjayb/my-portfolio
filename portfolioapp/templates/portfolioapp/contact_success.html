@@ -1,0 +1,22 @@
+{% extends 'portfolioapp/base.html'%}
+{%load static%}
+{%block title%}Succes{%endblock%}
+{%block displayPage%}
+
+<br>
+<br>
+
+{% if messages %}
+			
+		{% for message in messages %}
+			<p class="alert alert-{{message.tags}}">{{message}}</p>
+		{% endfor %}
+			
+    {% endif %}
+    
+	<h4>Your Message has been sent, i will get back to you shortly... </h4>
+
+
+	{%endblock%}
+
+	{%block displayNot %}{%endblock%}

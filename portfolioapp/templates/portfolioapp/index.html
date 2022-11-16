@@ -1,0 +1,37 @@
+{% extends 'portfolioapp/base.html'%}
+{%load static%}
+{%block title%}My portfolio App{%endblock%}
+{%block displayPage%}
+<section class="about section-padding" id="section_2">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-6 col-12">
+                <img src="{% static 'portfolioapp/images/couple-working-from-home-together-sofa.jpg' %}" class="about-image img-fluid" alt="">
+            </div>
+
+            <div class="col-lg-6 col-12 mt-5 mt-lg-0">
+                <div class="about-thumb">
+
+                    <div class="section-title-wrap d-flex justify-content-end align-items-center mb-4">
+                        <h2 class="text-white me-4 mb-0">About</h2>
+
+                        <img src="{% static 'portfolioapp/images/clients/jane.jpeg' %}" class="avatar-image img-fluid" alt="">
+                    </div>
+
+                    <h3 class="pt-2 mb-3">A little bit about Maryjane Amarachi</h3>
+
+                    <p>Backend developer with a wealth of experience in my chosen stack. 
+                        I have built several websites and web applications using python and PHP as a backend.
+                      Some are real applications used by my clients while i built some just to satisfy my curiosity and also to tickle my brain.</p>
+                      
+                      <p class="mb-4"><a class="custom-btn btn primary" href="#section_2">Download My Resume</a></p>
+                      
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+{%endblock%}
+
