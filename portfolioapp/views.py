@@ -62,7 +62,9 @@ def download_file(request, filename=''):
 
 
 def contact_success(request):
-    return render(request, 'portfolioapp/contact_success.html')
+    home_image=home.objects.get(id=1)
+    context={'home_image':home_image}
+    return render(request, 'portfolioapp/contact_success.html', context)
 
 def project_view(request, portfolio_slug):
     project=Project.objects.get(slug=portfolio_slug)
