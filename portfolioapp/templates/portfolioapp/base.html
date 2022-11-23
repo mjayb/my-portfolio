@@ -282,7 +282,7 @@ https://templatemo.com/tm-578-first-portfolio
                                 <p >{{project.description | linebreaks| truncatewords:15}}</p>
                             </div>
 
-                            <a href="{{project.github_link|urlize}}" class="btn btn-success"> Github</a> 
+                            <a href="{{project.githublink}}" class="btn btn-success"> Github</a> 
                             <a href="{{project.project_link}}" class="btn btn-secondary"> Website</a>
                             <a href="{% url 'project-view' project.slug %}" class="btn btn-success"> Quick View</a>
                                     <hr>
