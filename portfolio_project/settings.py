@@ -164,7 +164,6 @@ CORS_ALLOWED_ORIGINS=[
     "http://localhost:8080",
     "https://mj-portfolio-production.up.railway.app"
 
-
 ]
 
 
