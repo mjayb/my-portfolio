@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-import os
+import os, environs, dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -80,11 +80,18 @@ WSGI_APPLICATION = 'portfolio_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+env=environs.Env()
+environs.Env.read_env()
+
+DATABASES={
+    'default':dj_database_url.parse(env('DATABASE_URL'))
 }
 
 
@@ -141,30 +148,30 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_ROOT=os.path.join(BASE_DIR, 'uploads')
 MEDIA_URL='/files/'
 
-email_host= 'smtp.risinghopegirlseducation.com'
-email_port =465
-email_use_ssl = True
-email_host_user ='admin@risinghopegirlseducation.com'
-email_host_password = 'myadmin_1234'
+# email_host= 'smtp.risinghopegirlseducation.com'
+# email_port =465
+# email_use_ssl = True
+# email_host_user ='admin@risinghopegirlseducation.com'
+# email_host_password = 'myadmin_1234'
 
-# To email: contact form
-recipient_address='maryjaneamarachi04@gmail.com'
+# # To email: contact form
+# recipient_address='maryjaneamarachi04@gmail.com'
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST =  email_host
-EMAIL_PORT =email_port
-EMAIL_USE_SSL = email_use_ssl
-EMAIL_HOST_USER =email_host_user
-EMAIL_HOST_PASSWORD =email_host_password
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST =  email_host
+# EMAIL_PORT =email_port
+# EMAIL_USE_SSL = email_use_ssl
+# EMAIL_HOST_USER =email_host_user
+# EMAIL_HOST_PASSWORD =email_host_password
 
-# To email: contact form
-RECIPIENT_ADDRESS=recipient_address
+# # To email: contact form
+# RECIPIENT_ADDRESS=recipient_address
 
-CORS_ALLOWED_ORIGINS=[
-    "http://localhost:8080",
-    "https://mj-portfolio-production.up.railway.app"
+# CORS_ALLOWED_ORIGINS=[
+#     "http://localhost:8080",
+#     "https://mj-portfolio-production.up.railway.app"
 
-]
+# ]
 
 
-CSRF_TRUSTED_ORIGINS=["https://mj-portfolio-production.up.railway.app"]
+# CSRF_TRUSTED_ORIGINS=["https://mj-portfolio-production.up.railway.app"]
