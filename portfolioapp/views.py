@@ -16,7 +16,7 @@ def index(request):
     projects=Project.objects.all()
 
     #home section
-    home_image=home.objects.get(id=1)
+    home_image=home.objects.all()#get(id=1)
 
     #contact section
     form=ContactForm()
@@ -69,7 +69,7 @@ def contact_success(request):
 def project_view(request, portfolio_slug):
     project=Project.objects.get(slug=portfolio_slug)
     more_images=Project_upload.objects.filter(category=project.category.id)
-    home_image=home.objects.get(id=1)
+    home_image=home.objects.all()#get(id=1)
    
     context={'project':project, 'images':more_images,  'home_image':home_image}
     return render(request, 'portfolioapp/project_view.html' , context)   
