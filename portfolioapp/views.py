@@ -16,7 +16,7 @@ def index(request):
     projects=Project.objects.all()
 
     #home section
-    home_image=home.objects.all()#get(id=1)
+    home_image=home.objects.get(id=1)
 
     #contact section
     form=ContactForm()
