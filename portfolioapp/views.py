@@ -16,7 +16,7 @@ def index(request):
     projects=Project.objects.all()
 
     #home section
-    home_image=home.objects.get(id=1)
+    home_image=home.objects.all()#get(id=1)
 
     #contact section
     form=ContactForm()
@@ -37,7 +37,7 @@ def index(request):
          blogs=Blog.objects.filter(category__name__icontains=category)
     categories=Category.objects.all()[:8]
             
-    return render(request,'portfolioapp/base.html', {'projects':projects, 'home_image':home_image, 'form':form, 'blogs':blogs, 'categories':categories})
+    return render(request,'portfolioapp/base.html', {'projects':projects,  'form':form, 'blogs':blogs, 'categories':categories, 'home_image':home_image})
 
 
 def download_file(request, filename=''):
